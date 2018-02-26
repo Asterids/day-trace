@@ -15,7 +15,7 @@ import MyData from './MyData';
 export default class Root extends Component {
   constructor() {
     super();
-    this.state = "I am a string"; // this.state = {line1: '...', line2: '...', line3: '...'}
+    this.state = {};
   }
   // componentDidMount(){
   //   if (this.props.user) {
