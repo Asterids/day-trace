@@ -9,7 +9,7 @@ const app = require('../../server')
 // const { Product } = require('../../server/db/models')
 
 describe('Products Route:', () => {
-  beforeEach(() => db.sync({force: true}))
+  // beforeEach(() => db.sync({force: true}))
 
   describe('GET /api/actions/1', () => {
     xit('responds with an empty array in JSON at first', () => {

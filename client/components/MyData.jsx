@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SingleHaiku (props) {
+export default function MyData (props) {
 
     return (
       <div>
