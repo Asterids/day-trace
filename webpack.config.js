@@ -13,11 +13,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
-        loaders: ['babel'],
-        include: path.join(__dirname, 'src')
-      },
-      {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',

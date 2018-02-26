@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
-import ImageList from './ImageList';
-import Header from './Header';
-import SingleHaiku from './SingleHaiku';
-import store from '../store';
+import Navbar from './Navbar';
+import Home from './Home';
+import MyData from './MyData';
+// import store from '../store';
+
 
 export default class Root extends Component {
   constructor() {
     super();
-    this.state = store.getState().selectedHaiku; // this.state = {line1: '...', line2: '...', line3: '...'}
+    this.state = "I am a string"; // this.state = {line1: '...', line2: '...', line3: '...'}
   }
-  //
-  // componentDidMount() {
-  //   store.subscribe(() => {
-  //     this.setState(store.getState());
-  //   });
+  // componentDidMount(){
+  //   if (this.props.user) {
+  //     this.props.fetchInitialData();
+  //   }
   // }
 
-  render() {
+  render () {
     return (
-      <Router>
-        <div>
-          <Header />
-          <br />
-          <SingleHaiku line1={this.state.line1} line2={this.state.line2} line3={this.state.line3} />
-          <ImageList />
-        </div>
-      </Router>
+      <div id="root">
+        <Navbar />
+        <Home />
+        {/* <Route path="/about" component={About} /> */}
+        {/* <Route path="/login" component={Login} /> */}
+        {/* <Route path="/signup" component={Signup} /> */}
+        <MyData />
+      </div>
     )
   }
 }
