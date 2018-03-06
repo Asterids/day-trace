@@ -82,26 +82,14 @@ export default class MyData extends React.Component {
       ]
 
       // let months = userData.forEach()
-      let caffeine = [
-        {'month': 'January', 'Had caffeine': 9, 'label': 'Had caffeine: 9 days'},
-        {'month': 'February', 'Had caffeine': 12, 'label': 'Had caffeine: 12 days'},
-        {'month': 'March', 'Had caffeine': 2, 'label': 'Had caffeine: 2 days'}
-      ];
-
-      let alcohol = [
-        {'month': 'January', 'Had alcohol': 7, 'label': 'Had alcohol: 7 days'},
-        {'month': 'February', 'Had alcohol': 10, 'label': 'Had alcohol: 10 days'},
-        {'month': 'March', 'Had alcohol': 1, 'label': 'Had alcohol: 1 day'}
-      ];
-
-      let headache = [
-        {'month': 'January', 'Had headache': 4, 'label': 'Had headache: 4 days'},
-        {'month': 'February', 'Had headache': 3, 'label': 'Had headache: 3 days'},
-        {'month': 'March', 'Had headache': 2, 'label': 'Had headache: 2 days'}
+      let actions = [
+        {'month': 'January', 'Had caffeine': 9, 'Had alcohol': 7, 'Had headache': 4},
+        {'month': 'February', 'Had caffeine': 12, 'Had alcohol': 10, 'Had headache': 3},
+        {'month': 'March', 'Had caffeine': 2, 'Had alcohol': 1, 'Had headache': 2}
       ];
 
       let months = []
-      caffeine.forEach(action => months.push(action.month))
+      actions.forEach(action => months.push(action.month))
 
       // for each month, for each field, sum occurrences
 
@@ -133,29 +121,41 @@ export default class MyData extends React.Component {
               colorScale={["purple", "orange", "tomato"]}
             >
               <VictoryBar
+                labels={(d) => {
+                  const action = Object.keys(d)[4]
+                  return d[action] === 1 ? `${action}: 1 day` : `${action}: ${d[action]} days`
+                }}
                 labelComponent={<VictoryTooltip
                   cornerRadius={2}
                   pointerLength={4}
                 />}
-                data={caffeine}
+                data={actions}
                 x = 'month'
                 y = 'Had caffeine'
               />
               <VictoryBar
+                labels={(d) => {
+                  const action = Object.keys(d)[5]
+                  return d[action] === 1 ? `${action}: 1 day` : `${action}: ${d[action]} days`
+                }}
                 labelComponent={<VictoryTooltip
                   cornerRadius={2}
                   pointerLength={4}
                 />}
-                data={alcohol}
+                data={actions}
                 x = 'month'
                 y = 'Had alcohol'
               />
               <VictoryBar
+                labels={(d) => {
+                  const action = Object.keys(d)[6]
+                  return d[action] === 1 ? `${action}: 1 day` : `${action}: ${d[action]} days`
+                }}
                 labelComponent={<VictoryTooltip
                   cornerRadius={2}
                   pointerLength={4}
                 />}
-                data={headache}
+                data={actions}
                 x = 'month'
                 y = 'Had headache'
               />
