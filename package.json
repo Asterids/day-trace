@@ -10,7 +10,8 @@
   "scripts": {
     "test": "mocha ./tests/**/*.spec.js --watch --compilers js:babel-register",
     "start": "node app",
-    "start-dev": "webpack -w & nodemon app.js"
+    "start-dev": "webpack -w & nodemon app.js",
+    "seed": "node server/db/seed.js"
   },
   "author": "",
   "license": "ISC",

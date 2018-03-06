@@ -80,6 +80,8 @@ export default class MyData extends React.Component {
         {'date': new Date(2018, 2, 4), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 1},
         {'date': new Date(2018, 2, 5), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0}
       ]
+      // join table (UserActivity) btwn User, Action (findOrCreate actions upon user entry), with date field
+      // when you want a user's data for a particular action, findAll in join table where User===user and Action===action, and count
 
       // let months = userData.forEach()
       let actions = [
