@@ -1,5 +1,5 @@
 import React from 'react'
-import { VictoryChart, VictoryGroup, VictoryBar, VictoryTheme, VictoryZoomContainer } from "victory"
+import { VictoryChart, VictoryGroup, VictoryBar, VictoryTooltip } from "victory"
 
 export default class MyData extends React.Component {
     constructor() {
@@ -82,11 +82,26 @@ export default class MyData extends React.Component {
       ]
 
       // let months = userData.forEach()
-      let actions = [
-        {'month': 'January', 'Had caffeine': 9, 'Had alcohol': 7, 'Had headache': 4},
-        {'month': 'February', 'Had caffeine': 12, 'Had alcohol': 10, 'Had headache': 3},
-        {'month': 'March', 'Had caffeine': 2, 'Had alcohol': 1, 'Had headache': 2}
+      let caffeine = [
+        {'month': 'January', 'Had caffeine': 9, 'label': 'Had caffeine'},
+        {'month': 'February', 'Had caffeine': 12, 'label': 'Had caffeine'},
+        {'month': 'March', 'Had caffeine': 2, 'label': 'Had caffeine'}
       ];
+
+      let alcohol = [
+        {'month': 'January', 'Had alcohol': 7, 'label': 'Had alcohol'},
+        {'month': 'February', 'Had alcohol': 10, 'label': 'Had alcohol'},
+        {'month': 'March', 'Had alcohol': 1, 'label': 'Had alcohol'}
+      ];
+
+      let headache = [
+        {'month': 'January', 'Had headache': 4, 'label': 'Had headache'},
+        {'month': 'February', 'Had headache': 3, 'label': 'Had headache'},
+        {'month': 'March', 'Had headache': 2, 'label': 'Had headache'}
+      ];
+
+      let months = []
+      caffeine.forEach(action => months.push(action.month))
 
       // for each month, for each field, sum occurrences
 
@@ -114,21 +129,33 @@ export default class MyData extends React.Component {
         </VictoryChart> */}
           <VictoryChart viewBox={"0 0 500 300"}>
             <VictoryGroup offset={20}
-              categories={{x: ["Jan", "Feb", "Mar"]}}
+              categories={{x: months}}
               colorScale={["purple", "orange", "tomato"]}
             >
               <VictoryBar
-                data={actions}
+                labelComponent={<VictoryTooltip
+                  cornerRadius={2}
+                  pointerLength={4}
+                />}
+                data={caffeine}
                 x = 'month'
                 y = 'Had caffeine'
               />
               <VictoryBar
-                data={actions}
+                labelComponent={<VictoryTooltip
+                  cornerRadius={2}
+                  pointerLength={4}
+                />}
+                data={alcohol}
                 x = 'month'
                 y = 'Had alcohol'
               />
               <VictoryBar
-                data={actions}
+                labelComponent={<VictoryTooltip
+                  cornerRadius={2}
+                  pointerLength={4}
+                />}
+                data={headache}
                 x = 'month'
                 y = 'Had headache'
               />
