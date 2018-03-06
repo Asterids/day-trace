@@ -83,21 +83,21 @@ export default class MyData extends React.Component {
 
       // let months = userData.forEach()
       let caffeine = [
-        {'month': 'January', 'Had caffeine': 9, 'label': 'Had caffeine'},
-        {'month': 'February', 'Had caffeine': 12, 'label': 'Had caffeine'},
-        {'month': 'March', 'Had caffeine': 2, 'label': 'Had caffeine'}
+        {'month': 'January', 'Had caffeine': 9, 'label': 'Had caffeine: 9 days'},
+        {'month': 'February', 'Had caffeine': 12, 'label': 'Had caffeine: 12 days'},
+        {'month': 'March', 'Had caffeine': 2, 'label': 'Had caffeine: 2 days'}
       ];
 
       let alcohol = [
-        {'month': 'January', 'Had alcohol': 7, 'label': 'Had alcohol'},
-        {'month': 'February', 'Had alcohol': 10, 'label': 'Had alcohol'},
-        {'month': 'March', 'Had alcohol': 1, 'label': 'Had alcohol'}
+        {'month': 'January', 'Had alcohol': 7, 'label': 'Had alcohol: 7 days'},
+        {'month': 'February', 'Had alcohol': 10, 'label': 'Had alcohol: 10 days'},
+        {'month': 'March', 'Had alcohol': 1, 'label': 'Had alcohol: 1 day'}
       ];
 
       let headache = [
-        {'month': 'January', 'Had headache': 4, 'label': 'Had headache'},
-        {'month': 'February', 'Had headache': 3, 'label': 'Had headache'},
-        {'month': 'March', 'Had headache': 2, 'label': 'Had headache'}
+        {'month': 'January', 'Had headache': 4, 'label': 'Had headache: 4 days'},
+        {'month': 'February', 'Had headache': 3, 'label': 'Had headache: 3 days'},
+        {'month': 'March', 'Had headache': 2, 'label': 'Had headache: 2 days'}
       ];
 
       let months = []
