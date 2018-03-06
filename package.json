@@ -2,6 +2,10 @@
   "name": "daytrace-app",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asterids/day-trace"
+  },
   "main": "app.js",
   "scripts": {
     "test": "mocha ./tests/**/*.spec.js --watch --compilers js:babel-register",
