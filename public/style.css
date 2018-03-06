@@ -25,6 +25,11 @@ nav {
    display: flex;
    justify-content: space-between; }
 
+#actions {
+  width: 50%;
+  height: auto;
+  margin: auto; }
+
 ul {
   list-style-type: none; }
 
