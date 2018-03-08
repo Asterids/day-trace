@@ -1,5 +1,5 @@
 import React from 'react'
-import { VictoryChart, VictoryGroup, VictoryBar, VictoryTooltip } from "victory"
+import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis, VictoryTooltip } from "victory"
 
 export default class MyData extends React.Component {
     constructor() {
@@ -15,79 +15,81 @@ export default class MyData extends React.Component {
 
     render () {
       const userData = [
-        {'date': new Date(2018, 0, 1), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 0, 2), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 3), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 0, 4), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 1},
-        {'date': new Date(2018, 0, 5), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 6), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 7), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 8), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 9), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 10), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 11), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 0, 12), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 13), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 0, 14), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 0, 15), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 16), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 17), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 18), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 19), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 20), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 21), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 22), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 0, 23), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 24), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 25), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 26), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 0, 27), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 28), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 29), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 1},
-        {'date': new Date(2018, 0, 30), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 0, 31), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 1), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 2), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 3), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 4), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 5), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 6), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 1, 7), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 8), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 1, 9), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 10), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 11), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 12), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 13), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 14), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 15), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 16), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 1, 17), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 18), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 19), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 20), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 21), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 22), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 23), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 24), 'Had caffeine': 1, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 25), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 26), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 1, 27), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 1, 28), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 2, 1), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 0},
-        {'date': new Date(2018, 2, 2), 'Had caffeine': 0, 'Had alcohol': 1, 'Had headache': 0},
-        {'date': new Date(2018, 2, 3), 'Had caffeine': 0, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 2, 4), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 1},
-        {'date': new Date(2018, 2, 5), 'Had caffeine': 1, 'Had alcohol': 0, 'Had headache': 0}
+        {'date': new Date(2018, 0, 1), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 0, 2), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 3), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 0, 4), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 1},
+        {'date': new Date(2018, 0, 5), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 6), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 7), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 8), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 9), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 10), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 11), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 0, 12), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 13), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 0, 14), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 0, 15), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 16), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 17), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 18), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 19), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 20), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 21), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 22), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 0, 23), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 24), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 25), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 26), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 0, 27), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 28), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 29), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 1},
+        {'date': new Date(2018, 0, 30), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 0, 31), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 1), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 2), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 3), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 4), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 5), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 6), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 1, 7), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 8), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 1, 9), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 10), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 11), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 12), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 13), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 14), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 15), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 16), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 1, 17), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 18), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 19), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 20), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 21), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 22), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 23), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 24), 'Had caffeine': 1, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 25), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 26), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 1, 27), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 1, 28), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 2, 1), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 0},
+        {'date': new Date(2018, 2, 2), 'Had caffeine': 0, 'Had breakfast': 1, 'Had headache': 0},
+        {'date': new Date(2018, 2, 3), 'Had caffeine': 0, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 2, 4), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 1},
+        {'date': new Date(2018, 2, 5), 'Had caffeine': 1, 'Had breakfast': 0, 'Had headache': 0}
       ]
       // join table (UserActivity) btwn User, Action (findOrCreate actions upon user entry), with date field
       // when you want a user's data for a particular action, findAll in join table where User===user and Action===action, and count
 
       // let months = userData.forEach()
       let actions = [
-        {'month': 'January', 'Had caffeine': 9, 'Had alcohol': 7, 'Had headache': 4},
-        {'month': 'February', 'Had caffeine': 12, 'Had alcohol': 10, 'Had headache': 3},
-        {'month': 'March', 'Had caffeine': 2, 'Had alcohol': 1, 'Had headache': 2}
+        {'month': 'Nov', 'Had caffeine': 14, 'Had breakfast': 15, 'Had headache': 2},
+        {'month': 'Dec', 'Had caffeine': 8, 'Had breakfast': 18, 'Had headache': 0},
+        {'month': 'Jan', 'Had caffeine': 9, 'Had breakfast': 7, 'Had headache': 4},
+        {'month': 'Feb', 'Had caffeine': 12, 'Had breakfast': 10, 'Had headache': 3},
+        {'month': 'Mar', 'Had caffeine': 2, 'Had breakfast': 1, 'Had headache': 2}
       ];
 
       let months = []
@@ -98,7 +100,7 @@ export default class MyData extends React.Component {
 
       return (
         <div id="actions">
-          <div className="chart-header">All Actions</div>
+          <div className="chart-header">Past 5 months - Had caffeine, Had breakfast, Had headache</div>
           {/* <VictoryChart width={600} height={470} scale={{ x: "time" }}
             containerComponent={
               <VictoryZoomContainer
@@ -146,7 +148,7 @@ export default class MyData extends React.Component {
                 />}
                 data={actions}
                 x = 'month'
-                y = 'Had alcohol'
+                y = 'Had breakfast'
               />
               <VictoryBar
                 labels={(d) => {
@@ -162,6 +164,18 @@ export default class MyData extends React.Component {
                 y = 'Had headache'
               />
             </VictoryGroup>
+            <VictoryAxis
+              label="Months"
+              style={{
+                axisLabel: { padding: 35 }
+              }}
+             />
+              <VictoryAxis dependentAxis
+                label="Days"
+                style={{
+                  axisLabel: { padding: 35 }
+                }}
+              />
           </VictoryChart>
         </div>
       )

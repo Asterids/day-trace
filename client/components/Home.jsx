@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MyData from './MyData';
 
 export default function Home () {
   return (
@@ -9,7 +10,7 @@ export default function Home () {
           <h1>Welcome to DayTrace</h1>
         </section>
         <section>
-          <div><img src="/images/caffeineChart1.png" /></div>
+          <MyData />
         </section>
         <br />
         <section>

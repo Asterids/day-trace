@@ -1,5 +1,5 @@
 body {
-  background-color: #ffd870;
+  background-color: #fce7b5;
   font-family: 'Hind', 'Verdana', sans-serif;
   display: flex;
   justify-content: center; }
@@ -54,7 +54,10 @@ a {
   justify-content: center; }
 
 .welcome {
-  flex-direction: column; }
+  background-color: #fff8e8;
+  border-radius: 18px;
+  flex-direction: column;
+  width: 90% }
 
 section {
   text-align: center; }

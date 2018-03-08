@@ -32,7 +32,7 @@ export default class Root extends Component {
           {/* <Route path="/about" component={About} /> */}
           {/* <Route path="/login" component={Login} /> */}
           {/* <Route path="/signup" component={Signup} /> */}
-          <MyData />
+          {/* <MyData /> */}
         </div>
       </Router>
     )
