@@ -8,7 +8,7 @@ An app for personal data tracking, analysis & visualization
 
 The idea behind DayTrace is that a user can aggregate data about their habits, health issues, and activities by customizing their own list of trackable actions and then simply checking them off each day. This data will be viewable in several formats as it accumulates - bar charts, line graphs, and calendar heatmaps. In this way a user will be able to see a visual representation of otherwise ephemeral aspects of their daily life. Additionally, a user will be able to compare the frequency of multiple activities against each other (for example, caffeine and alcohol intake against headache occurrence).
 
-![alt text](./public/images/ChartExample.png "Example bar graph showing a user's caffeine intake over six months")
+![alt text](./public/images/daytracecap4.png "Example bar graph showing a user's caffeine intake over six months")
 
 ## Implementation
 
