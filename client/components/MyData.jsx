@@ -120,7 +120,7 @@ export default class MyData extends React.Component {
             />
         </VictoryChart> */}
           <VictoryChart viewBox={"0 0 500 300"}>
-            <VictoryGroup offset={20}
+            <VictoryGroup offset={12}
               categories={{x: months}}
               colorScale={["purple", "orange", "tomato"]}
             >
