@@ -49,7 +49,8 @@ describe('Components: ', () => {
       expect(shallowHome.find('SampleData')).to.have.length(1);
     });
 
-    xit('', () => {
+    xit('renders a "learn-more" button', () => {
+      expect(shallowHome.find('#learn-more')).to.have.length(1);
     });
   });
 
