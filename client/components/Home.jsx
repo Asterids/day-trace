@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MyData from './MyData';
+import SampleData from './SampleData';
 
 export default function Home () {
   return (
@@ -8,13 +8,13 @@ export default function Home () {
       <div className="welcome">
         <section>
           <h1>Welcome to DayTrace</h1>
+          <h3>Visualize data about your everyday</h3>
         </section>
         <section>
-          <MyData />
+          <SampleData />
         </section>
         <br />
         <section>
-          <h3>Visualize data about your everyday</h3>
           Learn more
         </section>
       </div>

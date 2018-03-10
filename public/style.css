@@ -25,10 +25,16 @@ nav {
    display: flex;
    justify-content: space-between; }
 
-#actions {
+.barchart {
   width: 50%;
   height: auto;
-  margin: auto; }
+  margin: auto;
+  padding-top: 9px;
+  border: 1px dashed grey;
+  border-radius: 4px; }
+
+.chart-header {
+  font-style: italic }
 
 ul {
   list-style-type: none; }
@@ -57,7 +63,16 @@ a {
   background-color: #fff8e8;
   border-radius: 18px;
   flex-direction: column;
-  width: 90% }
+  width: 90vw; }
+
+.welcome h1 {
+  margin-bottom: 5px;
+  font-size: 2em; }
+
+.welcome h3 {
+  margin-top: 5px;
+  margin-bottom: 35px;
+  font-size: 1em; }
 
 section {
   text-align: center; }

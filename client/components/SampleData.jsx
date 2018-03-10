@@ -8,21 +8,23 @@ export default class SampleData extends React.Component {
     }
 
     render () {
-      let actions = [
-        {'month': 'Jan', 'Did yoga': 15, 'Practiced piano': 6},
-        {'month': 'Feb', 'Did yoga': 8, 'Practiced piano': 9},
-        {'month': 'Mar', 'Did yoga': 5, 'Practiced piano': 0}
+      let sampleActions = [
+        {'month': 'Nov', 'Had caffeine': 14, 'Had breakfast': 15, 'Had headache': 2},
+        {'month': 'Dec', 'Had caffeine': 8, 'Had breakfast': 18, 'Had headache': 0},
+        {'month': 'Jan', 'Had caffeine': 9, 'Had breakfast': 7, 'Had headache': 4},
+        {'month': 'Feb', 'Had caffeine': 12, 'Had breakfast': 10, 'Had headache': 3},
+        {'month': 'Mar', 'Had caffeine': 2, 'Had breakfast': 1, 'Had headache': 2}
       ];
 
       let months = []
-      actions.forEach(action => months.push(action.month))
+      sampleActions.forEach(action => months.push(action.month))
 
 
       return (
-        <div id="actions">
-          <div className="chart-header">Past 5 months - Had caffeine, Had breakfast, Had headache</div>
+        <div className="barchart">
+          <div className="chart-header">Past 5 months - Frequency of Had caffeine, Had breakfast, Had headache</div>
 
-          <VictoryChart viewBox={"0 0 500 300"}>
+          <VictoryChart viewBox={"0 0 500 250"}>
             <VictoryGroup offset={12}
               categories={{x: months}}
               colorScale={["purple", "orange", "tomato"]}
@@ -36,7 +38,7 @@ export default class SampleData extends React.Component {
                   cornerRadius={2}
                   pointerLength={4}
                 />}
-                data={actions}
+                data={sampleActions}
                 x = 'month'
                 y = 'Had caffeine'
               />
@@ -49,7 +51,7 @@ export default class SampleData extends React.Component {
                   cornerRadius={2}
                   pointerLength={4}
                 />}
-                data={actions}
+                data={sampleActions}
                 x = 'month'
                 y = 'Had breakfast'
               />
@@ -62,7 +64,7 @@ export default class SampleData extends React.Component {
                   cornerRadius={2}
                   pointerLength={4}
                 />}
-                data={actions}
+                data={sampleActions}
                 x = 'month'
                 y = 'Had headache'
               />

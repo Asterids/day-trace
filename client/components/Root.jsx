@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 // import store from '../store';
 import Navbar from './Navbar';
 import Home from './Home';
-import MyData from './MyData';
+import SampleData from './SampleData';
 // import Login from './Login';
 // import Signup from './Signup';
 // import About from './About';
