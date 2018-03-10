@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 // import store from '../store';
 import Navbar from './Navbar';
@@ -25,16 +25,18 @@ export default class Root extends Component {
 
   render () {
     return (
-      <Router>
-        <div id="root">
-          <Navbar />
-          <Route exact path="/" component={Home} />
-          {/* <Route path="/about" component={About} /> */}
-          {/* <Route path="/login" component={Login} /> */}
-          {/* <Route path="/signup" component={Signup} /> */}
-          {/* <MyData /> */}
-        </div>
-      </Router>
+      <div id="root">
+        <Navbar />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            {/* <Route path="/about" component={About} /> */}
+            {/* <Route path="/login" component={Login} /> */}
+            {/* <Route path="/signup" component={Signup} /> */}
+            {/* <MyData /> */}
+          </Switch>
+        </Router>
+      </div>
     )
   }
 }
