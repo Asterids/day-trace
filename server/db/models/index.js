@@ -2,8 +2,8 @@ const User = require('./user')
 const Action = require('./action')
 const UserEntry = require('./userEntry')
 
-Action.belongsToMany(User, {through: {model: UserEntry, unique: false}})
-User.belongsToMany(Action, {through: {model: UserEntry, unique: false}})
+UserEntry.belongsTo(User)
+User.hasMany(UserEntry)
 
 module.exports = {
   User,
