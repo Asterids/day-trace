@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+
 import SampleData from './SampleData';
+import About from './About';
 
 export default function Home () {
   return (
@@ -16,7 +18,9 @@ export default function Home () {
         </section>
         <br />
         <section>
-          Learn more
+          <Router>
+            <Link to='/about'>Learn more</Link>
+          </Router>
         </section>
       </div>
     </div>
