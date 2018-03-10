@@ -9,6 +9,7 @@ export default function Home () {
         <section>
           <h1>Welcome to DayTrace</h1>
           <h3>Visualize data about your everyday</h3>
+          <h5>Mouse over the bars in the example chart below to see more information</h5>
         </section>
         <section>
           <SampleData />

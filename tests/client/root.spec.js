@@ -9,14 +9,15 @@ import Root from '../../client/components/Root.jsx';
 describe('<Root />', () => {
   const shallowRoot = shallow(<Root />);
 
-  it('should initially render 1 <Navbar /> component and 1 <MyData /> component', () => {
+  it('should initially render 1 <Navbar /> component and 1 <Home /> component', () => {
     expect(shallowRoot.find('Navbar')).to.have.length(1);
-    expect(shallowRoot.find('MyData')).to.have.length(1);
+    expect(shallowRoot.find('Home')).to.have.length(1);
   });
 
-  xit('has a state of some sort...', () => {
+  it('has an initial state that is an empty object', () => {
     const rootState = shallowRoot.state();
-    expect(rootState).to.be.a('string');
+    expect(rootState).to.exist;
+    expect(rootState).to.be.an('object');
   });
 
 });

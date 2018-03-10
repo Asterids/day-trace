@@ -8,10 +8,12 @@ export default class SampleData extends React.Component {
     }
 
     render () {
+      // UserEntries.findAll({where: {user: 1, title: 'Did yoga'}})
+      // UserEntries.findAll({where: {user: 1, title: 'Read a book'}})
       let actions = [
-        {'month': 'Jan', 'Did yoga': 15, 'Practiced piano': 6},
-        {'month': 'Feb', 'Did yoga': 8, 'Practiced piano': 9},
-        {'month': 'Mar', 'Did yoga': 5, 'Practiced piano': 0}
+        {'month': 'Jan', 'Did yoga': 15, 'Read a book': 6},
+        {'month': 'Feb', 'Did yoga': 8, 'Read a book': 9},
+        {'month': 'Mar', 'Did yoga': 5, 'Read a book': 0}
       ];
 
       let months = []

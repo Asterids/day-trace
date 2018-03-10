@@ -5,7 +5,8 @@ body {
   justify-content: center; }
 
 nav {
-  width: 95vw; }
+  width: 95vw;
+  height: 14vh; }
 
 .nav {
   display: flex;
@@ -26,7 +27,7 @@ nav {
    justify-content: space-between; }
 
 .barchart {
-  width: 50%;
+  width: 40vw;
   height: auto;
   margin: auto;
   padding-top: 9px;
@@ -63,16 +64,22 @@ a {
   background-color: #fff8e8;
   border-radius: 18px;
   flex-direction: column;
-  width: 90vw; }
+  width: 90vw;
+  height: 80vh; }
 
 .welcome h1 {
+  margin-top: 3px;
   margin-bottom: 5px;
-  font-size: 2em; }
+  font-size: 28px; }
 
 .welcome h3 {
   margin-top: 5px;
   margin-bottom: 35px;
   font-size: 1em; }
+
+.welcome h5 {
+  margin-top: 5px;
+  margin-bottom: 5px; }
 
 section {
   text-align: center; }
