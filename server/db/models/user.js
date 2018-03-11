@@ -4,6 +4,11 @@ const db = require('../db')
 const _ = require('lodash')
 
 const User = db.define('user', {
+  username: {
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: false
+  },
   email: {
     type: Sequelize.STRING,
     unique: true,

@@ -2,7 +2,7 @@ const router = require('express').Router()
 const { User } = require('../db/models')
 
 router.post('/login', (req, res, next) => {
-  User.findOne({where: {email: req.body.email}})
+  User.findOne({where: {username: req.body.username}})
     .then(user => {
       if (!user) {
         res.status(400).send('User not found')
