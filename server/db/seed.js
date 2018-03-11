@@ -3,12 +3,13 @@ const db = require('./db');
 const {
   User,
   Action,
-  UserEntry
+  UserEntry,
+  UserAction
 } = require('./models')
 
 const users = [
   { username: 'guest', email: 'guest@daytrace.com', password: 'password' }
-]
+];
 
 const actions = [
   { id: 1, description: 'Had caffeine' },
@@ -23,7 +24,7 @@ const actions = [
   { id: 10, description: 'Wrote a letter' },
   { id: 11, description: 'Practiced piano' },
   { id: 12, description: 'Practiced guitar' }
-]
+];
 
 const userentries = [
   { userId: 1, title: "Had headache", createdAt: new Date(2018, 2, 6) },
@@ -140,6 +141,15 @@ const userentries = [
   { userId: 1, title: "Ate breakfast", createdAt: new Date(2018, 0, 1) }
 ];
 
+const useractions = [
+  { userId: 1, actionId: 1 },
+  { userId: 1, actionId: 2 },
+  { userId: 1, actionId: 3 },
+  { userId: 1, actionId: 4 },
+  { userId: 1, actionId: 7 },
+  { userId: 1, actionId: 8 },
+  { userId: 1, actionId: 9 }
+];
 
 async function seed () {
   await db.sync({force: true})
@@ -152,8 +162,12 @@ async function seed () {
   console.log(`seeded ${actions.length} actions`)
   console.log(`seeded successfully`)
 
-  const creatingEntries = await Promise.all(userentries.map(userentry => UserEntry.create(userentry)))
+  const creatingUserEntries = await Promise.all(userentries.map(userentry => UserEntry.create(userentry)))
   console.log(`seeded ${userentries.length} user entries`)
+  console.log(`seeded successfully`)
+
+  const creatingUserActions = await Promise.all(useractions.map(useraction => UserAction.create(useraction)))
+  console.log(`seeded ${useractions.length} user actions`)
   console.log(`seeded successfully`)
 }
 
