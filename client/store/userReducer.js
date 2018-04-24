@@ -8,13 +8,19 @@ const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
 
 
-const getUser = user => {
-  type: GET_USER,
-  user
+export function getUser (user) {
+  const action = {
+    type: GET_USER,
+    user
+  }
+  return action
 }
 
 const removeUser = () => {
-  type: REMOVE_USER
+  const action = {
+    type: REMOVE_USER
+  }
+  return action
 }
 
 
@@ -25,21 +31,18 @@ export const me = () => {
         dispatch(getUser(res.data || defaultUser))
       })
       .catch(err => console.log(err))
-  }
-}
 
-export const auth = (email, password, method) => {
-  dispatch => {
-    axios.post(`/auth/${method}`, { email, password })
+export const auth = (username, password) =>
+  dispatch =>
+    axios.post(`/auth/login`, { username, password })
       .then(res => {
+        console.log("RES.DATA", res.data)
         dispatch(getUser(res.data))
         // history.push('/home')
       }, authError => {
         dispatch(getUser({error: authError}))
       })
       .catch(dispatchOrHistoryErr => console.error(dispatchOrHistoryErr))
-  }
-}
 
 export const logout = () => {
   dispatch => {
@@ -49,8 +52,6 @@ export const logout = () => {
         // history.push('/login')
       })
       .catch(err => console.log(err))
-  }
-}
 
 
 export default function (state = defaultUser, action) {

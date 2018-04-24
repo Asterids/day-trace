@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   entry: './client/index.jsx',
   output: {
@@ -11,7 +9,24 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
+      }
+    ],
     rules: [
+      {
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /(node_modules|bower_components)/,
+        options: {
+          presets: ['es2015']
+        }
+      },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
@@ -22,6 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /(node_modules|bower_components)/,
         use: [
           'style-loader',
           'css-loader'

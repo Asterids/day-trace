@@ -30,10 +30,9 @@ const mapDispatch = (dispatch) => {
   return {
     handleSubmit (evt) {
       evt.preventDefault()
-      const formName = evt.target.name
       const username = evt.target.username.value
       const password = evt.target.password.value
-      dispatch(auth(username, password, formName))
+      dispatch(auth(username, password))
     }
   }
 }

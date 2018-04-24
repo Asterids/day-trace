@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+import loggingMiddleware from 'redux-logger';
 import userReducer from './userReducer';
 // import actionReducer from './actionReducer';
 
@@ -10,7 +10,7 @@ const store = createStore(
   // actionReducer,
   applyMiddleware(
     thunkMiddleware,
-    createLogger({collapsed: true})
+    loggingMiddleware
   )
 );
 

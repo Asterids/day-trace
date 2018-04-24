@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('express-session')
-const passport = require('passport')
+const session = require('express-session');
+const passport = require('passport');
 
 const PORT = process.env.PORT || 3030
 if (process.env.NODE_ENV !== 'production') require('../secrets')

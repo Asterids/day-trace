@@ -2,6 +2,8 @@ const router = require('express').Router()
 const { User } = require('../db/models')
 
 router.post('/login', (req, res, next) => {
+  console.log("I am inside login...")
+  console.log("REQ.SESSION", req.session)
   User.findOne({where: {username: req.body.username}})
     .then(user => {
       if (!user) {
